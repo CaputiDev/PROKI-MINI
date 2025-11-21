@@ -6,25 +6,12 @@ use PDO;
 use PDOException;
 use Error\ApiException;
 
-// há várias estratégias para implementar a conexão com o banco de dados
-// para diferenciar das outras estratégias já utilizadas na disciplina, 
-// aqui vamos adotar o padrão Singleton
-
 class Database
 {
-	// para simplificar, vamos usar um banco SQLite
-	// e vamos definir o caminho do banco aqui, por simplicidade
 	private static string $database = __DIR__ . '/database.sqlite';
 
 	// Instância única da conexão (Singleton)
 	private static ?PDO $connection = null;
-
-	// poderíamos usar um construtor privado para impedir
-	// private function __construct(): void { }
-
-	// e evitar a clonagem da instância
-	// private function __clone(): void { }
-
 
 	// Método estático para obter a conexão
 	public static function getConnection(): PDO
