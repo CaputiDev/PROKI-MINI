@@ -1,0 +1,61 @@
+@baseUrl = http://localhost:80/api
+
+### CRIAÇÃO DE USUÁRIO (SIGN-UP)
+
+### Criar Usuário com Sucesso
+POST {{baseUrl}}/usuarios
+Content-Type: application/json
+
+{
+    "nome": "Thiago Teste",
+    "email": "thiago@email.com",
+    "senha": "minha_senha_secreta"
+}
+
+### Tentar Criar com E-mail Duplicado
+# Esperado: 409 Conflict
+POST {{baseUrl}}/usuarios
+Content-Type: application/json
+
+{
+    "nome": "Invasor",
+    "email": "thiago@email.com",
+    "senha": "outra_senha"
+}
+
+### Tentar Criar com Dados Inválidos (Campos faltando)
+# Esperado: 400 Bad Request
+POST {{baseUrl}}/usuarios
+Content-Type: application/json
+
+{
+    "nome": "Sem Email"
+    // Falta email e senha
+}
+
+### CONSULTA DE USUÁRIOS
+
+### Buscar Usuário por ID (Existente)
+GET {{baseUrl}}/usuarios/1
+Content-Type: application/json
+
+### Buscar Usuário por ID (Inexistente)
+# Esperado: 404 Not Found
+GET {{baseUrl}}/usuarios/999
+Content-Type: application/json
+
+###  Tentar Listar Todos (Rota Bloqueada)
+# Esperado: 403 Forbidden ou 405 Method Not Allowed
+GET {{baseUrl}}/usuarios
+Content-Type: application/json
+
+### AUTENTICAÇÃO (LOGIN)
+
+### Fazer Login
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+    "email": "thiago@email.com",
+    "senha": "minha_senha_secreta"
+}
