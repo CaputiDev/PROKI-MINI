@@ -20,7 +20,7 @@
 ## Estrutura do Projeto
 
 ```text
-proki/
+proki-mini/
 ├── src/
 │   ├── Controller/    # Controladores (Entrada da API)
 │   ├── Service/       # Regras de Negócio e Validações
