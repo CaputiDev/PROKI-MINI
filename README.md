@@ -105,24 +105,9 @@ php src/Database/setup.php
 
 ![Diagrama ER do Proki](./assets/diagrama_db.png)
 
-### Usuários de Teste (seed)
-
-O script de setup cria automaticamente os seguintes usuários:
-
-| ID| Nome   | Email               |  Senha  | Cargo |
-|---|--------|---------------------|---------|-------|
-| 1 | Admin  | `admin@admin.com`   | admin   | Admin |
-| 2 | Thiago | `thiago@proki.com`  | senha123| User  |
-| 3 | Miguel | `miguel@proki.com`  | senha123| User  |
-| 4 | Raul   | `raul@proki.com`    | senha123| User  |
-
----
-
 ## Rotas da API
 
 A API roda sob o prefixo `/proki`.
-
->💡Dica: Você pode usar os arquivos http na raiz do projeto, com a extensão [Rest Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) do VScode ou, se preferir, utilize o arquivo [proki_insomnia.json](./tools/proki_insomnia.json) no insomnia ou o [proki.har](./tools/proki.har) em qualquer outro programa para fazer as requisições.
 
 ### 🔐 Autenticação
 
@@ -149,32 +134,3 @@ A API roda sob o prefixo `/proki`.
 |--------|-------------------------------|--------------------------------------------------------|------ |
 | GET    | /proki/usuarios               | Lista todos os usuários cadastrados (ADMIN)            |  ✅   |
 | GET    | /proki/usuarios/{id}          | Ver perfil (o próprio ou Admin visualiza qualquer um)  |  ✅   |
-
-## Colaboradores
-
-<div align="center">
-
-<table>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/caputidev">
-        <img src="https://github.com/CaputiDev.png" width="100px;" alt="Foto Thiago"/><br>
-        <sub><b>Thiago Caputi</b></sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/raullize">
-        <img src="https://github.com/raullize.png" width="100px;" alt="Foto Raul"/><br>
-        <sub><b>Raul Lize Teixeira</b></sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/MiguelLewandowski">
-        <img src="https://github.com/MiguelLewandowski.png" width="100px;" alt="Foto Miguel"/><br>
-        <sub><b>Miguel Leonardo Lewandowski</b></sub>
-      </a>
-    </td>
-  </tr>
-</table>
-
-</div>
